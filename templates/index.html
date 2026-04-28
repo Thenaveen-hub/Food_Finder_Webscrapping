@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FoodFinder — Discover Top-Rated Places</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/static/css/style.css" />
+</head>
+<body>
+  <div class="noise"></div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-inner">
+      <div class="logo">
+        <span class="logo-icon">🍜</span>
+        <span class="logo-text">FoodFinder</span>
+      </div>
+      <nav class="nav">
+        <button class="nav-btn active" data-tab="search">Search</button>
+        <button class="nav-btn" data-tab="favorites">Favorites</button>
+        <button class="nav-btn" data-tab="history">History</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- SEARCH TAB -->
+  <main class="tab-content active" id="tab-search">
+    <section class="hero">
+      <div class="hero-text">
+        <h1>Find your next<br /><em>favourite meal</em></h1>
+        <p>Discover top-rated restaurants &amp; eateries powered by Google Maps</p>
+      </div>
+
+      <div class="search-card">
+        <div class="search-row">
+          <div class="input-group">
+            <label>City</label>
+            <input type="text" id="city-input" placeholder="e.g. Hyderabad" />
+          </div>
+          <div class="input-group">
+            <label>What are you craving?</label>
+            <input type="text" id="food-input" placeholder="e.g. biryani" />
+          </div>
+        </div>
+        <div class="search-row options-row">
+          <div class="input-group slim">
+            <label>Min Rating ⭐</label>
+            <div class="rating-slider-wrap">
+              <input type="range" id="rating-slider" min="1" max="5" step="0.5" value="4" />
+              <span id="rating-display">4.0</span>
+            </div>
+          </div>
+          <div class="input-group slim">
+            <label>Results</label>
+            <select id="limit-select">
+              <option value="5">5 places</option>
+              <option value="10" selected>10 places</option>
+              <option value="20">20 places</option>
+            </select>
+          </div>
+          <button class="search-btn" id="search-btn">
+            <span class="btn-label">Search</span>
+            <span class="btn-spinner hidden">⏳</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Results -->
+    <section class="results-section" id="results-section" style="display:none">
+      <div class="results-header">
+        <h2 id="results-title">Results</h2>
+        <span class="results-count" id="results-count"></span>
+      </div>
+      <div class="cards-grid" id="cards-grid"></div>
+    </section>
+
+    <div class="error-box hidden" id="error-box"></div>
+  </main>
+
+  <!-- FAVORITES TAB -->
+  <main class="tab-content" id="tab-favorites">
+    <section class="page-section">
+      <div class="page-header">
+        <h2>Saved Favourites</h2>
+        <p>Places you've bookmarked</p>
+      </div>
+      <div class="cards-grid" id="favorites-grid">
+        <div class="empty-state">No favourites yet. Search and bookmark places! 🔖</div>
+      </div>
+    </section>
+  </main>
+
+  <!-- HISTORY TAB -->
+  <main class="tab-content" id="tab-history">
+    <section class="page-section">
+      <div class="page-header">
+        <h2>Search History</h2>
+        <button class="clear-btn" id="clear-history-btn">Clear All</button>
+      </div>
+      <div class="history-list" id="history-list">
+        <div class="empty-state">No searches yet. Start exploring!</div>
+      </div>
+    </section>
+  </main>
+
+  <script src="/static/js/app.js"></script>
+</body>
+</html>
