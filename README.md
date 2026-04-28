@@ -32,6 +32,12 @@ FoodFinder is a full-stack web application built with FastAPI that lets you sear
 | **Validation** | [Pydantic v2](https://docs.pydantic.dev/latest/) schemas |
 
 ---
+## 📸 Screenshots
+
+<p align="center">
+  <img src="screenshots/search.png" width="45%" />
+  <img src="screenshots/resultspage.png" width="45%" />
+</p>
 
 ## 📁 Project Structure
 
@@ -70,13 +76,14 @@ food-finder/
 ### 1. Prerequisites
 
 - Python **3.10+**
+- Python 3.11 (Recommended)
 - A free [SerpAPI](https://serpapi.com/) account (100 free searches/month)
 
 ### 2. Clone / Download
 
 ```bash
 # If using git
-git clone <your-repo-url>
+git clone <https://github.com/Thenaveen-hub/Food_Finder_Webscrapping>
 cd food-finder
 
 # Or unzip the downloaded archive
@@ -87,6 +94,7 @@ cd food-finder
 ### 3. Create a virtual environment
 
 ```bash
+py -3.11 -m venv venv
 python -m venv venv
 
 
@@ -103,8 +111,8 @@ pip install -r requirements.txt
 ### 5. Configure your API key
 
 ```bash
-# Copy the example env file
-cp .env.example .env
+# Create the .env file
+cp .env
 
 # Open .env and add your SerpAPI key
 SERPAPI_KEY=your_actual_key_here
@@ -178,6 +186,6 @@ And install: `pip install psycopg2-binary`
 
 ## 📝 Notes
 
-- SerpAPI free plan: **100 searches/month**. Results are stored in the DB so re-running the same search won't fetch duplicate place records.
+- SerpAPI free plan: **250 searches/month**. Results are stored in the DB so re-running the same search won't fetch duplicate place records.
 - The app stores all returned places in SQLite; toggling favourites works on stored places.
 - The `place_id` field comes from Google Maps' internal IDs via SerpAPI.
