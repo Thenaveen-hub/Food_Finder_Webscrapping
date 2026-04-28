@@ -35,8 +35,8 @@ FoodFinder is a full-stack web application built with FastAPI that lets you sear
 ## 📸 Screenshots
 
 <p align="center">
-  <img src="screenshots/search.png" width="45%" />
-  <img src="screenshots/resultspage.png" width="45%" />
+  <img src="screenshots/searchpage.png" width="45%" />
+  <img src="screenshots/resultspage.png" width="45%" /> 
 </p>
 
 ## 📁 Project Structure
